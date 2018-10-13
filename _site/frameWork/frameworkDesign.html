@@ -1,0 +1,301 @@
+<html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg&quot;" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>框架文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="ymfe"/><meta name="keywords"/><meta name="description" content="ydoc description"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/></head><body><div class="g-doc"><div><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="" class="href">框架设计</a></li><li class="item"><a href="ModuleDesignSpecification.html" class="href">模块设计规范</a></li><li class="item"><a href="standard.html#" class="href">编码规范</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><img class="logo" width="36" src="../ydoc/images/dog@1x.png"/><h6 class="name">YDoc</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item "><a class="href" href="../documents/index.html">组件文档</a></li><li class="item active"><a class="href" href="index.html">框架文档</a></li><li class="item "><a class="href" href="../about/index.html">关于</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><div style="text-align:center;font-size:2rem">RypYo</div>
+<ul>
+<li>
+<p>思路设计</p>
+<ul>
+<li>
+<p>框架启动</p>
+<pre><code>&#x6682;&#x65F6;&#x4EC5;&#x4EC5;&#x4F9D;&#x8D56; 
+&#x9;AppRegistry.registerComponent(&#x27;com.ryp.rn.core&#x27;, AppModule);
+&#x6846;&#x67B6;&#x542F;&#x52A8; &#x52A0;&#x8F7D;&#x4E3B;&#x6A21;&#x5757;AppModule
+</code></pre>
+<ul>
+<li>
+<p>设计 和 想法</p>
+<pre><code>1:&#x6846;&#x67B6;&#x542F;&#x52A8;
+2:&#x521D;&#x59CB;&#x5316; &#x548C; &#x52A0;&#x8F7D;&#x5FC5;&#x8981;&#x8D44;&#x6E90; &#x5168;&#x5C40;&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;
+3:&#x901A;&#x8FC7;&#x6CE8;&#x5165;&#x7684;&#x65B9;&#x5F0F; &#x4F9D;&#x8D56;&#x6A21;&#x5757;
+&#x9;1:&#x8C03;&#x8BD5;&#x6A21;&#x5757;
+&#x9;2:&#x7F51;&#x7EDC;&#x6A21;&#x5757;
+&#x9;....
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>模块加载</p>
+<ul>
+<li>模块的创建</li>
+<li>数据： (Redux | theme) 接受上级模块组件数据,并向下注入。</li>
+<li>路由： 组装路由数据,接受子组件路由</li>
+<li>UI：加载显示UI</li>
+</ul>
+<pre><code>&#x3E; &#x9879;&#x76EE;&#x53EF;&#x6309;&#x7167;&#x9700;&#x8981;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x6A21;&#x5757;
+&#x3E; &#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x4FDD;&#x6301;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#xFF08;&#x6570;&#x636E;&#x72EC;&#x7ACB; &#x529F;&#x80FD;&#x72EC;&#x7ACB;&#xFF09;
+&#x3E; &#x5404;&#x4E2A;&#x6A21;&#x5757;&#x53EF;&#x8FDB;&#x884C;&#x4F9D;&#x8D56;&#xFF0C;&#x7EC4;&#x88C5;&#x4E3A;&#x5927;&#x7684;&#x6A21;&#x5757;
+&#x9;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>结构图
+<img src="./RypYo.png" alt=""></p>
+</li>
+<li>
+<p>模块组成</p>
+<ul>
+<li>
+<p>模块配置</p>
+<pre><code>&#x6A21;&#x5757;&#x7684;&#x521B;&#x5EFA; &#x548C; &#x914D;&#x7F6E;
+@NgModule({
+    key: &#x22;AppMain&#x22;,
+    reduxStore: getReduxStore(),
+    theme: {},
+    bootstrap: appMain,
+    imports: [],
+    navRouter: APPRouter
+})
+export class AppModule extends ModuleBase {
+&#x9;ConfigStart() { }
+&#x9;RouterHandleAfter(config, Container) { }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>该模块的标识</td>
+<td>no</td>
+</tr>
+<tr>
+<td>duxStore</td>
+<td>模块的Redux数据</td>
+</tr>
+<tr>
+<td>eme</td>
+<td>主题数据</td>
+</tr>
+<tr>
+<td>otstrap</td>
+<td>该模块的入口</td>
+</tr>
+<tr>
+<td>ports</td>
+<td>该模块下的所有子模块</td>
+</tr>
+<tr>
+<td>vRouter</td>
+<td>该模块的路由参数</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>路由</p>
+<pre><code>export class ModuleRouter {
+    name = &#x22;&#x22;
+    type = null
+    routeConfigMap = {}
+    stackConfig = {}
+    acceptRouter = false
+    getRouterInstance() { }
+}
+
+exam:
+    export const APPRouter = new ModuleRouter({
+&#x9;    type: createSwitchNavigator,
+&#x9;    name: &#x22;RYPApp&#x22;,
+&#x9;    routeConfigMap: {
+&#x9;        AppLoad: {screen:BlankPage}
+&#x9;    },
+&#x9;    stackConfig: {
+&#x9;        initialRouteName: &#x22;AppLoad&#x22;
+&#x9;    },
+&#x9;    acceptRouter: true
+&#x9;})
+&#x9;&#x5185;&#x90E8;
+    Router = createSwitchNavigator(routeConfigMap,stackConfig)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>说明</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pe</td>
+<td>依赖react-navigation  创建路由</td>
+</tr>
+<tr>
+<td>me</td>
+<td>该名称是作为路由在父模块的名称</td>
+</tr>
+<tr>
+<td>uteConfigMap</td>
+<td>依赖 react-navigation 该模块路由配置 (接受下级模块的入口配置)</td>
+</tr>
+<tr>
+<td>ackConfig</td>
+<td>依赖 react-navigation 该模块路由配置</td>
+</tr>
+<tr>
+<td>ceptRouter</td>
+<td>控制是否接受下级入口路由</td>
+</tr>
+<tr>
+<td>tRouterInstance</td>
+<td>得到配置后的路由对象</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>模块和路由关系</p>
+<blockquote>
+<p>模块和路由是一一对应关系</p>
+</blockquote>
+<blockquote>
+<p>模块入口是模块的首屏 ,也是路由具体配置的地方</p>
+</blockquote>
+<blockquote>
+<p>子模块展示 需要父模块注册子模块路由（导航进入）</p>
+</blockquote>
+<blockquote>
+<p>父模块接受所有依赖的子模块 并完成入口注册</p>
+</blockquote>
+<ul>
+<li>
+<p>对应关系</p>
+</li>
+<li>
+<p>父子模块</p>
+<pre><code>&#x5B50;&#x6A21;&#x5757;
+&#x9;export const LoginRouter = new ModuleRouter({
+&#x9;    type: createStackNavigator,
+&#x9;    name:&#x22;RYPLogin&#x22;,
+&#x9;    routeConfigMap: {
+&#x9;        Login: { screen: Login }
+&#x9;    },
+&#x9;    stackConfig: {
+&#x9;        initialRouteName: &#x27;Login&#x27;,
+&#x9;        headerMode: &#x27;screen&#x27;,
+&#x9;        navigationOptions: {
+&#x9;            header: null
+&#x9;        }
+&#x9;    }
+&#x9;})
+&#x9;
+&#x9;export class LoginBoot extends  Component{
+        render(){
+            ARouter = LoginRouter.getRouterInstance()
+            return (
+                &#x3C;View&#x3E;
+                    &#x3C;ARouter /&#x3E; //&#x5BFC;&#x822A;&#x5668;&#x7684;&#x5165;&#x53E3;
+                &#x3C;/View&#x3E;
+            )
+        }
+    }
+&#x9;@NgModule({
+&#x9;&#x9;import:[],
+&#x9;&#x9;bootstrap: LoginBoot,
+&#x9;&#x9;navRouter: LoginRouter
+&#x9;})
+&#x9;export class LoginModule {}
+
+&#x4E3B;&#x6A21;&#x5757;
+
+&#x9;&#x6A21;&#x5757;&#x5165;&#x53E3;
+&#x9;export class APPComponent extends  Component{
+&#x9;&#x9;render(){
+&#x9;&#x9;&#x9;ARouter = AppRouter.getRouterInstance()
+&#x9;&#x9;&#x9;return (
+&#x9;&#x9;&#x9;&#x9;&#x3C;View&#x3E;
+&#x9;&#x9;&#x9;&#x9;&#x9;&#x3C;ARouter /&#x3E; //&#x5BFC;&#x822A;&#x5668;&#x7684;&#x5165;&#x53E3;
+&#x9;&#x9;&#x9;&#x9;&#x3C;/View&#x3E;
+&#x9;&#x9;&#x9;)
+&#x9;&#x9;}
+&#x9;}
+
+&#x9;&#x6A21;&#x5757;&#x8DEF;&#x7531;&#x9;
+&#x9;&#x9;export const AppRouter = new ModuleRouter({
+&#x9;&#x9;    type: createSwitchNavigator,
+&#x9;&#x9;    name: &#x22;RYPApp&#x22;,
+&#x9;&#x9;    routeConfigMap: {
+&#x9;&#x9;        AppLoad: {screen:BlankPage}
+&#x9;&#x9;    },
+&#x9;&#x9;    stackConfig: {
+&#x9;&#x9;        initialRouteName: &#x22;AppLoad&#x22;
+&#x9;&#x9;    },
+&#x9;&#x9;    acceptRouter: true
+&#x9;&#x9;}) 
+&#x9;&#x6A21;&#x5757;&#x914D;&#x7F6E;
+&#x9;&#x9;@NgModule({
+&#x9;&#x9;&#x9;import:[
+&#x9;&#x9;&#x9;&#x9;LoginModule,
+&#x9;&#x9;&#x9;&#x9;HomeModule
+&#x9;&#x9;&#x9;],
+&#x9;&#x9;&#x9;bootstrap:APPComponent,
+&#x9;&#x9;&#x9;navRouter:AppRouter
+&#x9;&#x9;})
+&#x9;export class AppModule {}
+&#x9;AppRegistry.registerComponent(&#x27;com.ryp.rn.core&#x27;, AppModule);
+
+
+&#x9;App &#x542F;&#x52A8;&#x5E76;&#x663E;&#x793A; APPComponent &#x7EC4;&#x4EF6; &#x4F5C;&#x4E3A;App&#x9996;&#x5C4F; &#x5E76;&#x663E;&#x793A;AppRouter&#x8DEF;&#x7531;&#x7684;initPage
+</code></pre>
+</li>
+<li>
+<p>模块和路由（代码如上）</p>
+<ul>
+<li>
+<p>路由依赖</p>
+<pre><code>&#x5728;&#x5B50;&#x7236;&#x6A21;&#x5757;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E; &#x7236;&#x6A21;&#x5757;&#x8DEF;&#x7531;&#x914D;&#x7F6E;&#x4F1A;&#x6709;&#x6240;&#x6539;&#x53D8;
+&#x9;AppRouter
+&#x9;&#x9;routeConfigMap = {
+&#x9;&#x9;&#x9;AppLoad: {screen:BlankPage},
+&#x9;&#x9;&#x9;+&#x4F1A;&#x6DFB;&#x52A0;&#x5B50;&#x6A21;&#x5757;&#x5165;&#x53E3;&#x914D;&#x7F6E;
+&#x9;&#x9;&#x9;RYPLogin :{screen: LoginBoot}
+&#x9;&#x9;&#x9;RYPHome :{screen: HomeBoot}
+&#x9;&#x9;&#x9;....
+&#x9;&#x9;}
+&#x521B;&#x5EFA;&#x7236;&#x6A21;&#x5757;&#x8DEF;&#x7531; &#x5E76;&#x62E5;&#x6709;&#x6240;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x5165;&#x53E3;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>依赖的第三方库</p>
+<ul>
+<li>react-redux</li>
+<li>react-navigation</li>
+</ul>
+</li>
+</ul>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="index.html" class="href"><span class="ui-font-ydoc"></span>框架文档</a></div><div class="m-paging-next m-paging-item"><a href="ModuleDesignSpecification.html" class="href">模块设计规范<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if ($menu && sessionStorage.menuScrollTop) {
+		$menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);</script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../search_json.js"></script></body></html>
