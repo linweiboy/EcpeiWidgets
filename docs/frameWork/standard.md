@@ -87,8 +87,8 @@ function getName() {
 示例：
 
 ```
-let MAX_COUNT = 10;//Max_Count
-let URL = 'http://www.baidu.com';
+const MAX_COUNT = 10;//Max_Count
+const URL = 'http://www.baidu.com';
 ```
 ###### 1.4 构造函数命名
 <b>介绍：</b>构造函数也属于函数的一种，只不过采用new 运算符创建对象。<br />
@@ -123,6 +123,42 @@ st.setName('jerry');
 console.log(st.getname()); // =>jerry:输出_name私有变量的值
  
 ```
+
+###### 1.6 全局变量、常量命名规范
+为了区分项目新老变化，对于全局变量、常量的命名采用使用小驼峰式命名;同时为了方便以后管理，采用分类管理
+
+示例：
+
+```
+
+Object.assign(global, {
+
+    //本地资源类型全局
+    source: {
+        imagesSource: images,
+    },
+
+    //框架提供的全局方法
+    RypYo: {
+        toastShow: RypYo.toastShow,
+        runLoading: RypYo.runLoading,
+        closeLoading: RypYo.closeLoading
+    },
+    
+    //主题类型全局
+    theme: {
+        screenW: deviceWidth,
+        screenH: deviceHeight,
+    },
+    //布局工具类可定义的全局
+    layout: {
+        scaleSize: scaleSize
+    }
+
+
+})
+```
+
 #### 2. 注释规范
 
 ###### 2.1 单行注释
@@ -271,24 +307,149 @@ const atom = {
 
 （2）使用一些加载数据时，使用前先判断是否有数据，避免数据延迟或错误出现不知名崩溃问题；
 
-（3）项目中创建.js文件时，可以使用注释说明此文件用途及创建人，列如：<br />
-在文件最上面添加注释：
-
-```
-/**
- * Created by XXX
- *
- * Description: xxx组件
- */
-```
-（4）项目中，无用代码要删除，特殊地方做好注释
+（3）项目中，无用代码要删除，特殊地方做好注释
 
 
 
 
+#### 6. 其他注意点
+ 规范
+
+* 模块规范
+	* [模块规范](./模块设计规范.md)
+	
+* 文件规范
+	* 文件夹 | 文件名
+		* 首字母大写 驼峰标识
+	
+* 代码规范
+  * 头部标识(文件说明)
+
+	  	```
+	  	VsCode 插件fileheader
+	  	
+	  	/*
+	  	 * @Creator: mikey.zhaopeng
+	  	 * @Date:   2016-07-29 15:57:29
+	  	 * @Last Modified by: mikey.zhaopeng
+	  	 * @Last Modified time: 2016-08-09 13:29:41
+	  	 * @Desc 该文件描述
+	  	 */
+	  	```
+  	
+  * 方法
+  
+	  	* 注释(必要参数说明 和 方法解释)
+	  	
+	  		```
+	  		/**
+	  	     * 替换默认拦截器
+	  	     * @param {*} key 需要替换的拦截器key值
+	  	     * @param {*} interceptor 替换成哪个拦截器
+	  	     * 返回替换的拦截器
+	  	     */
+	  	    replaceInterceptor(key, interceptor) {
+	  	    
+	  	    }
+	  		```
+	  	* 声明
+	  	
+	  		```
+	  		class Student{
+	  			//第一种声明
+	  			/**
+	  			* 推荐
+	  			*/
+	  			method1=()=>{}
+	  			//第二中声明
+	  			method2(){}
+	  		}
+	  		```
+	  	* 权限（私有和公开）
+	  		* javascript 没有publish protect private
+	  		* 规定 下划线方法为私有方法
+	  		
+	  			```
+	  			公开方法  外部可以拿到对象直接调用该方法
+	  			addInterceptor = (interceptor) => {};
+	  			私有方法  下划线开头
+	  			_addInterceptor = (interceptor) => {};
+	  			```
+	  	
+	  	* this
+	
+	  		```
+	  			fetch().then(()=>{
+	  				this
+	  			})
+	  		```
+	  		* 方法统一使用 箭头函数()=>{}
+	  		* function(){} 函数直接绑定
+	  		
+	  			```
+	  			function(){}.bind(this)
+	  			```
+  * state状态声明
+	  * 组件初始方法中,声明所有使用的变量名
+	  * 简单明了的解释变量含义
+  	
+	  	```
+	  		constructor(props) {
+	  			this.state = {
+	  				sex:"",//用户性别
+	  				data:[]//列表数据
+	  			}
+	  		}
+	  	```
+	  	
+  * 图片资源导入
+  	
+	  	```
+	  	组件图片统一加载
+	  	this.userImage = images.home.userImage()
+	  	render(){
+	  		return (
+	  			<Image source = {this.userImage}></Image>
+	  		)
+	  	}
+	  	```
+	  	
+  * render
+	
+    	 * 只进行简单的数据处理，复杂数据处理的需要单独处理
+	    * 不容许进行出现 setState | 网络请求代码 | 耗时操作 await
+  	
+* 工具类导出
+	* 文件 + index.js 
+	
+		![A](./images/_index.jpeg)
+	* 单例工具类
+	
+		```
+		class GlobalTool{}
+		
+		export default new GlobalTool()
+		```
+	
+* 资源导出
+
+	* 图片 
+	
+		```
+		使用方法调用加载 ，防止图片没使用就已经加载
+			icon:()=>{
+				return require("......")
+			}
+		```
 
 
-
+#### 7.总结项目中需要规范的地方 
+ * 全局常量名称命名规范
+ * 类中定义的常量、变量、函数（方法）、类及文件头的注释规范
+ * 文件、文件夹、类名、函数（方法）名的名称命名的规范
+ * 无用代码的删除保留处理
+ * 区分私有方法与提供外部调用的方法的规范
+ 
 
 
 

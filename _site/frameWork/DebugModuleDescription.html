@@ -1,0 +1,164 @@
+<html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg&quot;" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>框架文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="ymfe"/><meta name="keywords"/><meta name="description" content="ydoc description"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/></head><body><div class="g-doc"><div><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="frameworkDesign.html" class="href">框架设计</a></li><li class="item"><a href="ModuleDesignSpecification.html" class="href">模块设计规范</a></li><li class="item"><a href="standard.html#" class="href">编码规范</a></li><li class="item"><a href="DebugModuleDescription.html#" class="href">调试模块说明</a></li><li class="item"><a href="codeScription.html#" class="href">代码规范</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><img class="logo" width="36" src="../ydoc/images/dog@1x.png"/><h6 class="name">容易配</h6></a></div><div><div class="m-search">
+      <div class="icon">&#xf0fd;</div>
+      <input type="text" class="input js-input" placeholder="搜索" />
+      <div class="m-search-result js-search-result"></div>
+    </div></div><nav class="m-header-nav js-nav"><ul class="m-header-items"><li class="item "><a class="href" href="../documents/index.html">组件文档</a></li><li class="item active"><a class="href" href="index.html">框架文档</a></li><li class="item "><a class="href" href="../about/index.html">关于</a></li></ul></nav><div id="js-nav-btn" class="m-header-btn ui-font-ydoc"></div></header><div class="m-content" id="js-content"><div id="markdown-body" class="m-content-container markdown-body"><p>DevModuleManager</p>
+<pre><code>&#x4F5C;&#x4E3A;&#x8F85;&#x52A9;&#x5F00;&#x53D1;&#x6A21;&#x5757;&#xFF0C;&#x4EC5;&#x4EC5;&#x5728;debug&#x7248;&#x672C;&#x4E2D;&#x4F1A;&#x751F;&#x6548;
+</code></pre>
+<blockquote>
+<p>DevModuleManager 管理器</p>
+</blockquote>
+<blockquote>
+<p>DevModule 调试模块的基类</p>
+</blockquote>
+<ul>
+<li>
+<p>DevModuleManager</p>
+<ul>
+<li>
+<p>管理调试模块</p>
+</li>
+<li>
+<p>接受配置参数</p>
+<ul>
+<li>接受RypYo.registerBoots第三个参数(Config.dev)作为调试环境参数</li>
+<li>参数会传递给各个模块</li>
+</ul>
+<pre><code>import { RypYo } from &#x22;react-native-ecpei-framework&#x22;;
+
+RypYo.registerBoots(&#x22;com.ryp.rn.core&#x22;, AppModule, Config={
+    dev: {    &#x9;
+    }
+})
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>DevModule 调试模块</p>
+<blockquote>
+<p>作为辅助开发类</p>
+</blockquote>
+<blockquote>
+<p>在debug 版本中运行</p>
+</blockquote>
+<ul>
+<li>
+<p>DevModule</p>
+<pre><code>class DevModule {
+&#x9;constructor(name,disable){
+&#x9;&#x9;name&#x914D;&#x7F6E;&#x5728;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x914D;&#x7F6E;
+&#x9;&#x9;disable&#x662F;&#x5426;&#x5F00;&#x542F;&#x5F00;&#x6A21;&#x5757;
+&#x9;}
+    run(isEnv,config){
+    &#x9;isEnv &#x8868;&#x793A;&#x662F;&#x5426;&#x4E3A;&#x5F00;&#x53D1;&#x73AF;&#x5883;
+    &#x9;config DevModuleManager&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>默认模块：RNValidate 进行代码验证</p>
+<pre><code>export default class RNValidate extends DevModule {
+    run = (isEnv) =&#x3E; {
+        if (!isEnv) return;
+        global.Validate = function (...args) {
+            desc = args.pop()
+            if (!args.reduce((one, two) =&#x3E; { return (one &#x26;&#x26; two) }, true)) {
+                throw new Error(&#x22;RNValidate &#x4E0D;&#x901A;&#x8FC7; &#x22; + desc)
+                return
+            }
+        }
+    }
+}
+
+&#x53D6;&#x6240;&#x6709;&#x6761;&#x4EF6;&#x7684;&#x5E76;&#x96C6;,&#x6765;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x662F;&#x5426;&#x6EE1;&#x8DB3;
+
+Dome:
+&#x9;let user = null;
+&#x9;let config = null;
+&#x9;Validate(user,config,&#x22;user and config &#x4E0D;&#x80FD;&#x4E3A;null&#x22;);
+&#x9;login(user,config)
+&#x6548;&#x679C;&#x89C1;&#x4E0B;&#x56FE;
+</code></pre>
+<p><img src="./Validate.png" alt=""></p>
+</li>
+<li>
+<p>默认模块：AjaxIntercept 拦截所有网络请求</p>
+<blockquote>
+<p>拦截RN | H5 所有网络请求 作为日志</p>
+</blockquote>
+<ul>
+<li>如何将网络日志序列化到本地</li>
+</ul>
+<pre><code>//new AjaxIntercept(&#x22;WebLog&#x22;)&#x63A5;&#x53D7;WebLog&#x53C2;&#x6570;
+
+&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#x6A21;&#x5757;&#x7684;&#x914D;&#x7F6E;
+&#x9;RypYo.registerBoots(&#x22;com.ryp.rn.core&#x22;, AppModule, {
+&#x9;    dev: {
+&#x9;    &#x9;WebLog:{
+&#x9;    &#x9;&#x9;websocket:&#x22;ws://172.18.0.201:8888&#x22;,
+&#x9;&#x9;    &#x9;disable:false
+&#x9;    &#x9;}
+&#x9;    &#x9;
+&#x9;    }
+&#x9;})
+mac:
+&#x9;&#x89E3;&#x538B;WebLog.zip
+&#x9;&#x8FD0;&#x884C; npm i
+&#x9;&#x8FD0;&#x884C; npm run start(&#x5F00;&#x542F;&#x670D;&#x52A1;)
+phone:
+&#x9;&#x62E6;&#x622A;&#x5230;&#x7F51;&#x7EDC;&#x65E5;&#x5FD7;&#x4F1A;&#x5C06;&#x65E5;&#x5FD7;&#x4F20;&#x9012;&#x5230;WebLog.websocket&#x5BF9;&#x5E94;&#x7684;&#x5730;&#x5740;&#x4E0A;
+</code></pre>
+<p><img src="./WebLogDome.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li>
+<p>如何手动编写自定义调试模块</p>
+<pre><code>&#x7F16;&#x5199;&#x4EE3;&#x7801;
+&#x9;import { DevModule, DevModuleManager } from &#x22;react-native-ecpei-framework&#x22;;
+&#x9;class DevConsole extends DevModule{
+&#x9;&#x9;run(isEnv,config){
+&#x9;&#x9;&#x9;//config == DevLog(&#x89C1;&#x914D;&#x7F6E;)
+&#x9;        if(isEnv){
+&#x9;            const _console = console;
+&#x9;            global.console = {
+&#x9;                ..._console,
+&#x9;                log:()=&#x3E;{
+&#x9;                    
+&#x9;                }
+&#x9;            }
+&#x9;        }
+&#x9;    }
+&#x9;}
+
+&#x6CE8;&#x518C;&#x6A21;&#x5757;
+&#x9;DevModuleManager.addModule(new DevConsole(&#x22;DevLog&#x22;))
+&#x914D;&#x7F6E;
+&#x9;RypYo.registerBoots(&#x22;com.ryp.rn.core&#x22;, AppModule, {
+&#x9;    dev: {
+&#x9;    &#x9;DevLog:{
+&#x9;&#x9;    &#x9;disable:false,
+&#x9;&#x9;    &#x9;xx:&#x22;&#x22;,
+&#x9;&#x9;    &#x9;.....
+&#x9;    &#x9;}
+&#x9;    &#x9;
+&#x9;    }
+&#x9;})
+
+</code></pre>
+</li>
+</ul>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="standard.html" class="href"><span class="ui-font-ydoc"></span>编码规范</a></div><div class="m-paging-next m-paging-item"><a href="codeScription.html" class="href">代码规范<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
+    var $content = document.getElementById('js-content');
+    var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
+    var $menu = document.getElementById('js-menu');
+    if ($menu && sessionStorage.menuScrollTop) {
+		$menu.scrollTop = sessionStorage.menuScrollTop;
+    }
+    // 刷新页面但不切换 pathname 的时候，内容区恢复到记忆的高度
+    if ($content && sessionStorage.contentScrollTop && window.location.pathname == sessionStorage.locationPathname) {
+      $content.scrollTop = sessionStorage.contentScrollTop;
+    }
+    sessionStorage.setItem('locationPathname', window.location.pathname);</script><script src="../ydoc/scripts/plugins/dollar.min.js"></script><script src="../ydoc/scripts/plugins/responsive-nav.min.js"></script><script src="../ydoc/scripts/plugins/slideout.min.js"></script><script src="../ydoc/scripts/app.js"></script><script src="../ydoc/ydoc-plugin-search/core.js"></script><script src="../ydoc/ydoc-plugin-search/search.js"></script><script src="../search_json.js"></script></body></html>

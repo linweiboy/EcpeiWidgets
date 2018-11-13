@@ -1,4 +1,4 @@
-<html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg&quot;" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>编码规范-框架文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="ymfe"/><meta name="keywords"/><meta name="description" content="ydoc description"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/></head><body><div class="g-doc"><div><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="frameworkDesign.html" class="href">框架设计</a></li><li class="item"><a href="ModuleDesignSpecification.html" class="href">模块设计规范</a></li><li class="item"><a href="standard.html#" class="href">编码规范</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><img class="logo" width="36" src="../ydoc/images/dog@1x.png"/><h6 class="name">YDoc</h6></a></div><div><div class="m-search">
+<html lang="zh-CN"><head><meta charSet="UTF-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"/><link rel="apple-touch-icon" sizes="180x180" href="../ydoc/images/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="../ydoc/images/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../ydoc/images/favicon-16x16.png"/><link rel="manifest" href="../ydoc/images/manifest.json"/><link rel="mask-icon" href="../ydoc/images/safari-pinned-tab.svg&quot;" color="#5bbad5"/><meta name="theme-color" content="#ffffff"/><meta http-equiv="Cache-Control" content="no-transform"/><meta http-equiv="Cache-Control" content="no-siteapp"/><title>编码规范-框架文档</title><link rel="stylesheet" href="../ydoc/styles/style.css"/><meta name="author" content="ymfe"/><meta name="keywords"/><meta name="description" content="ydoc description"/><meta id="releativePath" content=".."/><link rel="stylesheet" href="../ydoc/ydoc-plugin-search/search.css"/></head><body><div class="g-doc"><div><div class="m-summary" id="js-menu"><div class="m-summary-content" id="js-menu-content"><div class="m-summary-block"><ul class="m-summary-list"><li class="item"><a href="frameworkDesign.html" class="href">框架设计</a></li><li class="item"><a href="ModuleDesignSpecification.html" class="href">模块设计规范</a></li><li class="item"><a href="standard.html#" class="href">编码规范</a></li><li class="item"><a href="DebugModuleDescription.html#" class="href">调试模块说明</a></li><li class="item"><a href="codeScription.html#" class="href">代码规范</a></li></ul></div></div></div><div class="m-summary-switch" id="js-summary-switch"><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="bottom"><g transform="translate(904.92214,-879.1482)"><path d="m -673.67664,1221.6502 -231.2455,-231.24803 55.6165,-55.627 c 30.5891,-30.59485 56.1806,-55.627 56.8701,-55.627 0.6894,0 79.8637,78.60862 175.9427,174.68583 l 174.6892,174.6858 174.6892,-174.6858 c 96.079,-96.07721 175.253196,-174.68583 175.942696,-174.68583 0.6895,0 26.281,25.03215 56.8701,55.627 l 55.6165,55.627 -231.245496,231.24803 c -127.185,127.1864-231.5279,231.248 -231.873,231.248 -0.3451,0 -104.688,-104.0616 -231.873,-231.248 z" fill="#fff"></path></g></svg><svg viewBox="0 0 926.23699 573.74994" version="1.1" x="0px" y="0px" width="15" height="15" class="top"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="aaa" fill="#fff" fill-rule="nonzero"><path d="M231.2455,342.502 L0,111.25397 L55.6165,55.62697 C86.2056,25.03212 111.7971,-2.99999998e-05 112.4866,-2.99999998e-05 C113.176,-2.99999998e-05 192.3503,78.60859 288.4293,174.6858 L463.1185,349.3716 L637.8077,174.6858 C733.8867,78.60859 813.060896,-2.99999997e-05 813.750396,-2.99999997e-05 C814.439896,-2.99999997e-05 840.031396,25.03212 870.620496,55.62697 L926.236996,111.25397 L694.9915,342.502 C567.8065,469.6884 463.4636,573.75 463.1185,573.75 C462.7734,573.75 358.4305,469.6884 231.2455,342.502 Z" id="Shape" transform="translate(463.118498, 286.874985) scale(1, -1) translate(-463.118498, -286.874985) "></path></g></g></svg></div></div><div class="m-main" id="js-panel"><header class="m-header" id="js-header"><div class="m-header-title js-logo"><a href="../index.html" target="_self"><img class="logo" width="36" src="../ydoc/images/dog@1x.png"/><h6 class="name">容易配</h6></a></div><div><div class="m-search">
       <div class="icon">&#xf0fd;</div>
       <input type="text" class="input js-input" placeholder="搜索" />
       <div class="m-search-result js-search-result"></div>
@@ -82,8 +82,8 @@ function getName() {
 <b>命名规范：</b>使用大写字母和下划线来组合命名，下划线用以分割单词。<br>
 <b>命名建议：</b>无。<br>
 示例：</p>
-<pre><code>let MAX_COUNT = 10;//Max_Count
-let URL = &#x27;http://www.baidu.com&#x27;;
+<pre><code>const MAX_COUNT = 10;//Max_Count
+const URL = &#x27;http://www.baidu.com&#x27;;
 </code></pre>
 <h6>1.4 构造函数命名</h6>
 <p><b>介绍：</b>构造函数也属于函数的一种，只不过采用new 运算符创建对象。<br>
@@ -113,6 +113,21 @@ var st = new Student(&#x27;tom&#x27;);
 st.setName(&#x27;jerry&#x27;);
 console.log(st.getname()); // =&#x3E;jerry:&#x8F93;&#x51FA;_name&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x7684;&#x503C;
  
+</code></pre>
+<h6>1.6 全局变量、常量命名规范</h6>
+<p>为了区分项目新老变化，对于全局变量、常量的命名采用使用特殊符号($)+小驼峰式命名</p>
+<p>示例：</p>
+<pre><code>Object.assign(global, {
+    $mages: images,
+    $RypYo: RypYo,
+    $Toast: RypYo.toastShow,
+    $RunLoading: RypYo.runLoading,
+    $CloseLoading: RypYo.closeLoading,
+    $screenW: deviceWidth,
+    $screenH: deviceHeight,
+    $scaleSize: scaleSize
+
+})
 </code></pre>
 <h4>2. 注释规范</h4>
 <h6>2.1 单行注释</h6>
@@ -231,16 +246,176 @@ const atom = {
 <h4>5. 项目中基本要求</h4>
 <p>（1）项目中列表页，刚进入时默认使用空白页，待数据加载完时，再区分无数据还是有数据页面；</p>
 <p>（2）使用一些加载数据时，使用前先判断是否有数据，避免数据延迟或错误出现不知名崩溃问题；</p>
-<p>（3）项目中创建.js文件时，可以使用注释说明此文件用途及创建人，列如：<br>
-在文件最上面添加注释：</p>
-<pre><code>/**
- * Created by XXX
- *
- * Description: xxx&#x7EC4;&#x4EF6;
+<p>（3）项目中，无用代码要删除，特殊地方做好注释</p>
+<h4>6. 其他注意点</h4>
+<p>规范</p>
+<ul>
+<li>
+<p>模块规范</p>
+<ul>
+<li><a href="./%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83.md">模块规范</a></li>
+</ul>
+</li>
+<li>
+<p>文件规范</p>
+<ul>
+<li>文件夹 | 文件名
+<ul>
+<li>首字母大写 驼峰标识</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>代码规范</p>
+<ul>
+<li>
+<p>头部标识(文件说明)</p>
+<pre><code>```
+VsCode 插件fileheader
+
+/*
+ * @Creator: mikey.zhaopeng
+ * @Date:   2016-07-29 15:57:29
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2016-08-09 13:29:41
+ * @Desc 该文件描述
  */
+```
 </code></pre>
-<p>（4）项目中，无用代码要删除，特殊地方做好注释</p>
-</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="ModuleDesignSpecification.html" class="href"><span class="ui-font-ydoc"></span>模块设计规范</a></div></div></div></div></div><div></div><script>
+</li>
+<li>
+<p>方法</p>
+<pre><code>* 注释(必要参数说明 和 方法解释)
+
+	```
+	/**
+     * 替换默认拦截器
+     * @param {*} key 需要替换的拦截器key值
+     * @param {*} interceptor 替换成哪个拦截器
+     * 返回替换的拦截器
+     */
+    replaceInterceptor(key, interceptor) {
+    
+    }
+	```
+* 声明
+
+	```
+	class Student{
+		//第一种声明
+		/**
+		* 推荐
+		*/
+		method1=()=&gt;{}
+		//第二中声明
+		method2(){}
+	}
+	```
+* 权限（私有和公开）
+	* javascript 没有publish protect private
+	* 规定 下划线方法为私有方法
+	
+		```
+		公开方法  外部可以拿到对象直接调用该方法
+		addInterceptor = (interceptor) =&gt; {};
+		私有方法  下划线开头
+		_addInterceptor = (interceptor) =&gt; {};
+		```
+
+* this
+
+	```
+		fetch().then(()=&gt;{
+			this
+		})
+	```
+	* 方法统一使用 箭头函数()=&gt;{}
+	* function(){} 函数直接绑定
+	
+		```
+		function(){}.bind(this)
+		```
+</code></pre>
+</li>
+<li>
+<p>state状态声明</p>
+<ul>
+<li>
+<p>组件初始方法中,声明所有使用的变量名</p>
+</li>
+<li>
+<p>简单明了的解释变量含义</p>
+<pre><code>&#x9;constructor(props) {
+&#x9;&#x9;this.state = {
+&#x9;&#x9;&#x9;sex:&#x22;&#x22;,//&#x7528;&#x6237;&#x6027;&#x522B;
+&#x9;&#x9;&#x9;data:[]//&#x5217;&#x8868;&#x6570;&#x636E;
+&#x9;&#x9;}
+&#x9;}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>图片资源导入</p>
+<pre><code>```
+组件图片统一加载
+this.userImage = images.home.userImage()
+render(){
+	return (
+		&lt;Image source = {this.userImage}&gt;&lt;/Image&gt;
+	)
+}
+```
+</code></pre>
+</li>
+<li>
+<p>render</p>
+<pre><code> * 只进行简单的数据处理，复杂数据处理的需要单独处理
+* 不容许进行出现 setState | 网络请求代码 | 耗时操作 await
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>工具类导出</p>
+<ul>
+<li>
+<p>文件 + index.js</p>
+<p><img src="./images/_index.jpeg" alt="A"></p>
+</li>
+<li>
+<p>单例工具类</p>
+<pre><code>class GlobalTool{}
+
+export default new GlobalTool()
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>资源导出</p>
+<ul>
+<li>
+<p>图片</p>
+<pre><code>&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x52A0;&#x8F7D; &#xFF0C;&#x9632;&#x6B62;&#x56FE;&#x7247;&#x6CA1;&#x4F7F;&#x7528;&#x5C31;&#x5DF2;&#x7ECF;&#x52A0;&#x8F7D;
+&#x9;icon:()=&#x3E;{
+&#x9;&#x9;return require(&#x22;......&#x22;)
+&#x9;}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4>7.总结项目中需要规范的地方</h4>
+<ul>
+<li>全局常量名称命名规范</li>
+<li>类中定义的常量、变量、函数（方法）、类及文件头的注释规范</li>
+<li>文件、文件夹、类名、函数（方法）名的名称命名的规范</li>
+<li>无用代码的删除保留处理</li>
+<li>区分私有方法与提供外部调用的方法的规范</li>
+</ul>
+</div><div class="m-content-container m-paging"><div class="m-paging-prev m-paging-item"><a href="ModuleDesignSpecification.html" class="href"><span class="ui-font-ydoc"></span>模块设计规范</a></div><div class="m-paging-next m-paging-item"><a href="DebugModuleDescription.html" class="href">调试模块说明<span class="ui-font-ydoc"></span></a></div></div></div></div></div><div></div><script>
     var $content = document.getElementById('js-content');
     var $summaryItems = Array.prototype.slice.call(document.querySelectorAll('#js-menu .href'));
     var $menu = document.getElementById('js-menu');

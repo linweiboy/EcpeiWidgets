@@ -3,28 +3,33 @@
 
 * Chat模块名为例
 
-	```
-	ChatModule(模块文件夹)
-		index.js 
-		ChatModule.js 模块
-		ChatRouter.js  模块路由
-		Redux
-			Types.js (集中管理Redux type)
-			actions
-				ChatActions.js (生成action 然后派发)
-			reducers
-				ChatReducers.js (处理派发的action 更新Redux)
-		Server(网络请求)
-			Api.js
-		Pages (模块页面)
-			PageA.js
-			PageB.js
-	 ```	
+  ```
+  ChatModule(模块文件夹)
+  	index.js 
+  	ChatModule.js 模块
+  	ChatRouter.js  模块路由
+  	Redux
+  		Types.js (集中管理Redux type)
+  		actions
+  			ChatActions.js (生成action 然后派发)
+  		reducers
+  			ChatReducers.js (处理派发的action 更新Redux)
+  	Pages (模块页面)
+  		index.js 页面导出
+  		PageA
+  			index.js(页面主入口)
+  			Views（单页面组件）
+  		PageB.js
+  		common 管理当前页面下的公共文件
+  			Views(视图组件)
+  			tools（公共工具类）
+  			index.js（导出）
+  ```
 
 * 结构图
 
- ![](./MM.png)
- 
+ ![](./images/Gui.jpeg)
+
 * 如何加入一个模块
 
 	* 在父模块中增加入口

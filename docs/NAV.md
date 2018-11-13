@@ -1,4 +1,4 @@
-# YDoc
+# 容易配
 ![logo](ydoc/images/dog@1x.png)
 
 * [组件文档](/documents/index.md)
